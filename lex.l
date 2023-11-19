@@ -80,19 +80,13 @@ while			{return(WHILE_SYM);}
 %%
 
 char *makeString(char *s) {
-
-//	printf("makeString : %s\n", s);
 	char *t;
 	t = malloc(strlen(s)+1);
 	strcpy(t,s);
-//	printf("	return(%s)\n", t);
-
 	return(t);
 }
 
 int checkIdentifier(char *s) {
-
-//	printf("checkIdentifier : %s\n", s);
 	A_ID *id;
 	id = current_id;
 
@@ -103,17 +97,14 @@ int checkIdentifier(char *s) {
 	}
 	if (id == 0) {
 		yylval = makeString(s);
-//		printf("	return new IDENTIFIER\n");
 		return(IDENTIFIER); 
 	}
 	else if (id->kind==ID_TYPE) {
 		yylval = id -> type;
-//		printf("	return TYPE_IDENTIFIER\n");
 		return(TYPE_IDENTIFIER);
 	}
 	else {
 		yylval = id -> name;
-//		printf("	return old IDENTIFIER\n");
 		return(IDENTIFIER);
 	}
 }
