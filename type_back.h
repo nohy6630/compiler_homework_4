@@ -1,6 +1,13 @@
 #define NIL 0
-typedef enum {FALSE,TRUE} BOOLEAN;
-typedef enum e_node_name {
+
+typedef enum
+{
+	FALSE,
+	TRUE
+} BOOLEAN;
+
+typedef enum e_node_name
+{
 	N_NULL,
 	N_PROGRAM,
 	N_EXP_IDENT,
@@ -38,10 +45,8 @@ typedef enum e_node_name {
 	N_EXP_AND,
 	N_EXP_OR,
 	N_EXP_ASSIGN,
-	
 	N_ARG_LIST,
 	N_ARG_LIST_NIL,
-	
 	N_STMT_LABEL_CASE,
 	N_STMT_LABEL_DEFAULT,
 	N_STMT_COMPOUND,
@@ -56,32 +61,69 @@ typedef enum e_node_name {
 	N_STMT_RETURN,
 	N_STMT_CONTINUE,
 	N_STMT_BREAK,
-	
 	N_FOR_EXP,
 	N_STMT_LIST,
 	N_STMT_LIST_NIL,
-	
 	N_INIT_LIST,
 	N_INIT_LIST_ONE,
-	N_INIT_LIST_NIL} NODE_NAME;
+	N_INIT_LIST_NIL
+} NODE_NAME;
 
-typedef enum {T_NULL,T_ENUM,T_ARRAY,T_STRUCT,T_UNION,T_FUNC,T_POINTER,
-		T_VOID} T_KIND;
-typedef enum {Q_NULL,Q_CONST,Q_VOLATILE} Q_KIND;
-typedef enum {S_NULL,S_AUTO,S_STATIC,S_TYPEDEF,S_EXTERN,S_REGISTER} S_KIND;
-typedef enum {ID_NULL,ID_VAR,ID_FUNC,ID_PARM,ID_FIELD,ID_TYPE,ID_ENUM,
-		ID_STRUCT,ID_ENUM_LITERAL}  ID_KIND;
+typedef enum
+{
+	T_NULL,
+	T_ENUM,
+	T_ARRAY,
+	T_STRUCT,
+	T_UNION,
+	T_FUNC,
+	T_POINTER,
+	T_VOID
+} T_KIND;
 
-typedef struct s_node {
+typedef enum
+{
+	Q_NULL,
+	Q_CONST,
+	Q_VOLATILE
+} Q_KIND;
+
+typedef enum
+{
+	S_NULL,
+	S_AUTO,
+	S_STATIC,
+	S_TYPEDEF,
+	S_EXTERN,
+	S_REGISTER
+} S_KIND;
+
+typedef enum
+{
+	ID_NULL,
+	ID_VAR,
+	ID_FUNC,
+	ID_PARM,
+	ID_FIELD,
+	ID_TYPE,
+	ID_ENUM,
+	ID_STRUCT,
+	ID_ENUM_LITERAL
+} ID_KIND;
+
+typedef struct s_node
+{ // 신택스 트리의 노드
 	NODE_NAME name;
 	int line;
 	int value;
-	struct s_type  *type;
+	struct s_type *type;
 	struct s_node *llink;
 	struct s_node *clink;
-	struct s_node *rlink;} A_NODE;
+	struct s_node *rlink;
+} A_NODE;
 
-typedef struct s_type {
+typedef struct s_type
+{ // 타입 테이블
 	T_KIND kind;
 	int size;
 	int local_var_size;
@@ -89,11 +131,12 @@ typedef struct s_type {
 	struct s_id *field;
 	struct s_node *expr;
 	int line;
-	BOOLEAN check; 
-	BOOLEAN prt; } A_TYPE;
+	BOOLEAN check;
+	BOOLEAN prt;
+} A_TYPE;
 
-
-typedef struct s_id {
+typedef struct s_id
+{ // 심볼 테이블
 	char *name;
 	ID_KIND kind;
 	S_KIND specifier;
@@ -104,12 +147,27 @@ typedef struct s_id {
 	A_TYPE *type;
 	int line;
 	struct s_id *prev;
-	struct s_id *link;} A_ID;
+	struct s_id *link;
+} A_ID;
 
-typedef union {int i; float f; char c; char *s;} LIT_VALUE;
-typedef struct lit {int addr; A_TYPE *type; LIT_VALUE value;} A_LITERAL;
-typedef struct {
+typedef union
+{
+	int i;
+	float f;
+	char c;
+	char *s;
+} LIT_VALUE;
+
+typedef struct lit
+{
+	int addr;
+	A_TYPE *type;
+	LIT_VALUE value;
+} A_LITERAL;
+
+typedef struct
+{
 	A_TYPE *type;
 	S_KIND stor;
-	int line;} A_SPECIFIER;
-
+	int line;
+} A_SPECIFIER;

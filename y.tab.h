@@ -36,10 +36,10 @@
    private implementation details that can be changed or removed.  */
 
 #ifndef YY_YY_Y_TAB_H_INCLUDED
-# define YY_YY_Y_TAB_H_INCLUDED
+#define YY_YY_Y_TAB_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
-# define YYDEBUG 0
+#define YYDEBUG 0
 #endif
 #if YYDEBUG
 extern int yydebug;
@@ -47,69 +47,69 @@ extern int yydebug;
 
 /* Token kinds.  */
 #ifndef YYTOKENTYPE
-# define YYTOKENTYPE
-  enum yytokentype
-  {
-    YYEMPTY = -2,
-    YYEOF = 0,                     /* "end of file"  */
-    YYerror = 256,                 /* error  */
-    YYUNDEF = 257,                 /* "invalid token"  */
-    IDENTIFIER = 258,              /* IDENTIFIER  */
-    TYPE_IDENTIFIER = 259,         /* TYPE_IDENTIFIER  */
-    CHARACTER_CONSTANT = 260,      /* CHARACTER_CONSTANT  */
-    STRING_LITERAL = 261,          /* STRING_LITERAL  */
-    FLOAT_CONSTANT = 262,          /* FLOAT_CONSTANT  */
-    INTEGER_CONSTANT = 263,        /* INTEGER_CONSTANT  */
-    ASSIGN = 264,                  /* ASSIGN  */
-    MINUS = 265,                   /* MINUS  */
-    PLUS = 266,                    /* PLUS  */
-    SEMICOLON = 267,               /* SEMICOLON  */
-    AMP = 268,                     /* AMP  */
-    PERCENT = 269,                 /* PERCENT  */
-    SLASH = 270,                   /* SLASH  */
-    STAR = 271,                    /* STAR  */
-    EXCL = 272,                    /* EXCL  */
-    COMMA = 273,                   /* COMMA  */
-    PERIOD = 274,                  /* PERIOD  */
-    COLON = 275,                   /* COLON  */
-    RR = 276,                      /* RR  */
-    LR = 277,                      /* LR  */
-    RB = 278,                      /* RB  */
-    LB = 279,                      /* LB  */
-    RP = 280,                      /* RP  */
-    LP = 281,                      /* LP  */
-    DOTDOTDOT = 282,               /* DOTDOTDOT  */
-    BARBAR = 283,                  /* BARBAR  */
-    AMPAMP = 284,                  /* AMPAMP  */
-    NEQ = 285,                     /* NEQ  */
-    EQL = 286,                     /* EQL  */
-    GEQ = 287,                     /* GEQ  */
-    LEQ = 288,                     /* LEQ  */
-    GTR = 289,                     /* GTR  */
-    LSS = 290,                     /* LSS  */
-    ARROW = 291,                   /* ARROW  */
-    MINUSMINUS = 292,              /* MINUSMINUS  */
-    PLUSPLUS = 293,                /* PLUSPLUS  */
-    WHILE_SYM = 294,               /* WHILE_SYM  */
-    UNION_SYM = 295,               /* UNION_SYM  */
-    TYPEDEF_SYM = 296,             /* TYPEDEF_SYM  */
-    SWITCH_SYM = 297,              /* SWITCH_SYM  */
-    STRUCT_SYM = 298,              /* STRUCT_SYM  */
-    STATIC_SYM = 299,              /* STATIC_SYM  */
-    SIZEOF_SYM = 300,              /* SIZEOF_SYM  */
-    RETURN_SYM = 301,              /* RETURN_SYM  */
-    IF_SYM = 302,                  /* IF_SYM  */
-    FOR_SYM = 303,                 /* FOR_SYM  */
-    ENUM_SYM = 304,                /* ENUM_SYM  */
-    ELSE_SYM = 305,                /* ELSE_SYM  */
-    DO_SYM = 306,                  /* DO_SYM  */
-    DEFAULT_SYM = 307,             /* DEFAULT_SYM  */
-    CONTINUE_SYM = 308,            /* CONTINUE_SYM  */
-    CASE_SYM = 309,                /* CASE_SYM  */
-    BREAK_SYM = 310,               /* BREAK_SYM  */
-    AUTO_SYM = 311                 /* AUTO_SYM  */
-  };
-  typedef enum yytokentype yytoken_kind_t;
+#define YYTOKENTYPE
+enum yytokentype
+{
+  YYEMPTY = -2,
+  YYEOF = 0,                /* "end of file"  */
+  YYerror = 256,            /* error  */
+  YYUNDEF = 257,            /* "invalid token"  */
+  IDENTIFIER = 258,         /* IDENTIFIER  */
+  TYPE_IDENTIFIER = 259,    /* TYPE_IDENTIFIER  */
+  CHARACTER_CONSTANT = 260, /* CHARACTER_CONSTANT  */
+  STRING_LITERAL = 261,     /* STRING_LITERAL  */
+  FLOAT_CONSTANT = 262,     /* FLOAT_CONSTANT  */
+  INTEGER_CONSTANT = 263,   /* INTEGER_CONSTANT  */
+  ASSIGN = 264,             /* ASSIGN  */
+  MINUS = 265,              /* MINUS  */
+  PLUS = 266,               /* PLUS  */
+  SEMICOLON = 267,          /* SEMICOLON  */
+  AMP = 268,                /* AMP  */
+  PERCENT = 269,            /* PERCENT  */
+  SLASH = 270,              /* SLASH  */
+  STAR = 271,               /* STAR  */
+  EXCL = 272,               /* EXCL  */
+  COMMA = 273,              /* COMMA  */
+  PERIOD = 274,             /* PERIOD  */
+  COLON = 275,              /* COLON  */
+  RR = 276,                 /* RR  */
+  LR = 277,                 /* LR  */
+  RB = 278,                 /* RB  */
+  LB = 279,                 /* LB  */
+  RP = 280,                 /* RP  */
+  LP = 281,                 /* LP  */
+  DOTDOTDOT = 282,          /* DOTDOTDOT  */
+  BARBAR = 283,             /* BARBAR  */
+  AMPAMP = 284,             /* AMPAMP  */
+  NEQ = 285,                /* NEQ  */
+  EQL = 286,                /* EQL  */
+  GEQ = 287,                /* GEQ  */
+  LEQ = 288,                /* LEQ  */
+  GTR = 289,                /* GTR  */
+  LSS = 290,                /* LSS  */
+  ARROW = 291,              /* ARROW  */
+  MINUSMINUS = 292,         /* MINUSMINUS  */
+  PLUSPLUS = 293,           /* PLUSPLUS  */
+  WHILE_SYM = 294,          /* WHILE_SYM  */
+  UNION_SYM = 295,          /* UNION_SYM  */
+  TYPEDEF_SYM = 296,        /* TYPEDEF_SYM  */
+  SWITCH_SYM = 297,         /* SWITCH_SYM  */
+  STRUCT_SYM = 298,         /* STRUCT_SYM  */
+  STATIC_SYM = 299,         /* STATIC_SYM  */
+  SIZEOF_SYM = 300,         /* SIZEOF_SYM  */
+  RETURN_SYM = 301,         /* RETURN_SYM  */
+  IF_SYM = 302,             /* IF_SYM  */
+  FOR_SYM = 303,            /* FOR_SYM  */
+  ENUM_SYM = 304,           /* ENUM_SYM  */
+  ELSE_SYM = 305,           /* ELSE_SYM  */
+  DO_SYM = 306,             /* DO_SYM  */
+  DEFAULT_SYM = 307,        /* DEFAULT_SYM  */
+  CONTINUE_SYM = 308,       /* CONTINUE_SYM  */
+  CASE_SYM = 309,           /* CASE_SYM  */
+  BREAK_SYM = 310,          /* BREAK_SYM  */
+  AUTO_SYM = 311            /* AUTO_SYM  */
+};
+typedef enum yytokentype yytoken_kind_t;
 #endif
 /* Token kinds.  */
 #define YYEMPTY -2
@@ -172,17 +172,14 @@ extern int yydebug;
 #define AUTO_SYM 311
 
 /* Value type.  */
-#if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
+#if !defined YYSTYPE && !defined YYSTYPE_IS_DECLARED
 typedef int YYSTYPE;
-# define YYSTYPE_IS_TRIVIAL 1
-# define YYSTYPE_IS_DECLARED 1
+#define YYSTYPE_IS_TRIVIAL 1
+#define YYSTYPE_IS_DECLARED 1
 #endif
-
 
 extern YYSTYPE yylval;
 
-
-int yyparse (void);
-
+int yyparse(void);
 
 #endif /* !YY_YY_Y_TAB_H_INCLUDED  */
